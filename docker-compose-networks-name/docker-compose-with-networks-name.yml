@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  hello-world:
+    image: "hello-world:latest"
+
+    networks:
+      - foobar
+
+# with name property
+# Compose file version >= 3.5
+# https://docs.docker.com/compose/compose-file/compose-versioning/#version-35
+networks:
+  foobar:
+    driver: bridge
+    name: foobar

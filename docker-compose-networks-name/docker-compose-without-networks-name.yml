@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  hello-world:
+    image: "hello-world:latest"
+
+    networks:
+      - foobar
+
+# without name property
+networks:
+  foobar:
+    driver: bridge
