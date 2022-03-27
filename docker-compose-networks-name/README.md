@@ -27,8 +27,8 @@ networks:
 ```console
 amiere@LAPTOP-5BV4FPUC:~/mydir$ docker-compose -f ./docker-compose-without-networks-name.yml up
 [+] Running 2/2
- ⠿ Network mydir_foobar           Created                                                                          0.1s
- ⠿ Container mydir-hello-world-1  Created                                                                          0.1s
+ ⠿ Network mydir_foobar           Created                                                    0.1s
+ ⠿ Container mydir-hello-world-1  Created                                                    0.1s
 Attaching to mydir-hello-world-1
 mydir-hello-world-1  |
 mydir-hello-world-1  | Hello from Docker!
@@ -87,8 +87,8 @@ networks:
 ```console
 amiere@LAPTOP-5BV4FPUC:~/mydir$ docker-compose -f ./docker-compose-with-networks-name.yml up
 [+] Running 2/2
- ⠿ Network foobar                 Created                                                                          0.1s
- ⠿ Container mydir-hello-world-1  Created                                                                          1.0s
+ ⠿ Network foobar                 Created                                                    0.1s
+ ⠿ Container mydir-hello-world-1  Created                                                    1.0s
 Attaching to mydir-hello-world-1
 mydir-hello-world-1  |
 mydir-hello-world-1  | Hello from Docker!
@@ -172,6 +172,8 @@ docker-compose는 cobra library를 사용합니다.
 [Cobra is a library for creating powerful modern CLI applications.](https://github.com/spf13/cobra)
 
 우리가 사용하는 docker-compose 명령어는 아래에서 시작합니다.
+
+아래의 github source code permalink는 2022년 3월 26일을 기준으로 하였습니다.
 
 [https://github.com/docker/compose/blob/v2/cmd/compose/compose.go#L228](https://github.com/docker/compose/blob/v2/cmd/compose/compose.go#L228)
 
