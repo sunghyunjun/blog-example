@@ -175,7 +175,7 @@ docker-compose는 cobra library를 사용합니다.
 
 아래의 github source code permalink는 2022년 3월 26일을 기준으로 하였습니다.
 
-[https://github.com/docker/compose/blob/v2/cmd/compose/compose.go#L228](https://github.com/docker/compose/blob/v2/cmd/compose/compose.go#L228)
+[docker compose v2 compose.go#L228](https://github.com/docker/compose/blob/v2/cmd/compose/compose.go#L228)
 
 ```go
 func RootCommand(dockerCli command.Cli, backend api.Service) *cobra.Command {
@@ -195,7 +195,7 @@ func RootCommand(dockerCli command.Cli, backend api.Service) *cobra.Command {
 
 ```
 
-[https://github.com/docker/compose/blob/v2/cmd/compose/compose.go#L293](https://github.com/docker/compose/blob/v2/cmd/compose/compose.go#L293)
+[docker compose v2 compose.go#L293](https://github.com/docker/compose/blob/v2/cmd/compose/compose.go#L293)
 
 ```go
 	command.AddCommand(
@@ -211,7 +211,7 @@ func RootCommand(dockerCli command.Cli, backend api.Service) *cobra.Command {
 
 `upCommand`, `downCommand` 등이 우리가 `docker-compose up`와 같은 명령어를 사용하는 것과 관련 있는 부분입니다.
 
-[https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/up.go#L95](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/up.go#L95)
+[docker compose v2 up.go#L95](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/up.go#L95)
 
 ```go
 func upCommand(p *projectOptions, backend api.Service) *cobra.Command {
@@ -238,7 +238,7 @@ func upCommand(p *projectOptions, backend api.Service) *cobra.Command {
 
 여기서 `WithServices` 부분을 살펴보면 다음과 같습니다.
 
-[https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L119](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L119)
+[docker compose v2 compose.go#L119](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L119)
 
 ```go
 // WithServices creates a cobra run command from a ProjectFunc based on configured project options and selected services
@@ -256,7 +256,7 @@ func (o *projectOptions) WithServices(fn ProjectServicesFunc) func(cmd *cobra.Co
 
 여기서 `toProject` 를 살펴보면 아래와 같습니다.
 
-[https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L153](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L153)
+[docker compose v2 compose.go#L153](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L153)
 
 ```go
 func (o *projectOptions) toProject(services []string, po ...cli.ProjectOptionsFn) (*types.Project, error) {
@@ -278,7 +278,7 @@ func (o *projectOptions) toProject(services []string, po ...cli.ProjectOptionsFn
 
 먼저 `toProjectOptions` 를 살펴보면 아래와 같습니다.
 
-[https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L207](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L207)
+[docker compose v2 compose.go#L207](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L207)
 
 ```go
 func (o *projectOptions) toProjectOptions(po ...cli.ProjectOptionsFn) (*cli.ProjectOptions, error) {
@@ -317,7 +317,7 @@ Options:
 
 ```
 
-[https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L130](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L130)
+[docker compose v2 compose.go#L130](https://github.com/docker/compose/blob/be187bae649521f5776033284a511da0fbaf8058/cmd/compose/compose.go#L130)
 
 ```go
 func (o *projectOptions) addProjectFlags(f *pflag.FlagSet) {
@@ -330,7 +330,7 @@ func (o *projectOptions) addProjectFlags(f *pflag.FlagSet) {
 
 `cli.WithName(o.ProjectNme)`의 `WithName`은 아래와 같습니다.
 
-[https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L63](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L63)
+[compose-spec compose-go cli options.go#L63](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L63)
 
 ```go
 func WithName(name string) ProjectOptionsFn {
@@ -343,7 +343,7 @@ func WithName(name string) ProjectOptionsFn {
 
 이제 약간 다시 돌아와서 `cli.ProjectFromOptions`를 살펴보겠습니다.
 
-[https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L296](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L296)
+[compose-spec compose-go cli options.go#L296](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L296)
 
 ```go
 func ProjectFromOptions(options *ProjectOptions) (*types.Project, error) {
@@ -374,7 +374,7 @@ func ProjectFromOptions(options *ProjectOptions) (*types.Project, error) {
 
 `absWorkingDir`, `withNamePrecedenceLoad(absWorkingDir, options)`을 살펴보겠습니다. 그리고 이어서 `loader.Load`를 살펴보겠습니다.
 
-[https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L350](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L350)
+[compose-spec compose-go cli options.go#L350](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/cli/options.go#L350)
 
 ```go
 func withNamePrecedenceLoad(absWorkingDir string, options *ProjectOptions) func(*loader.Options) {
@@ -395,7 +395,7 @@ func withNamePrecedenceLoad(absWorkingDir string, options *ProjectOptions) func(
 
 즉 docker compose project name이 절대경로 이름의 base가 되는 것입니다.
 
-[https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/loader.go#L70](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/loader.go#L70)
+[compose-spec compose-go loader loader.go#L70](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/loader.go#L70)
 
 ```go
 func (o *Options) SetProjectName(name string, imperativelySet bool) {
@@ -406,7 +406,7 @@ func (o *Options) SetProjectName(name string, imperativelySet bool) {
 
 이제 `cli.ProjectFromOptions` 내부의 `loader.Load`를 살펴보겠습니다.
 
-[https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/loader.go#L145](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/loader.go#L145)
+[compose-spec compose-go loader loader.go#L145](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/loader.go#L145)
 
 ```go
 func Load(configDetails types.ConfigDetails, options ...func(*Options)) (*types.Project, error) {
@@ -429,7 +429,7 @@ func Load(configDetails types.ConfigDetails, options ...func(*Options)) (*types.
 
 `opts.SkipNormalization`의 기본값은 false이며 `normalize`가 실행되게 됩니다.
 
-[https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/normalize.go#L31](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/normalize.go#L31)
+[compose-spec compose-go loader normalize.go#L31](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/normalize.go#L31)
 
 ```go
 // normalize compose project by moving deprecated attributes to their canonical position and injecting implicit defaults
@@ -450,7 +450,7 @@ func normalize(project *types.Project, resolvePaths bool) error {
 
 `setNameFromKey` 여기서 default Name을 project.Name으로 설정하는 것을 확인할 수 있습니다.
 
-[https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/normalize.go#L146](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/normalize.go#L146)
+[compose-spec compose-go loader normalize.go#L146](https://github.com/compose-spec/compose-go/blob/e3cf2790536b2a6110a5f9cd81da580775d1f9c4/loader/normalize.go#L146)
 
 ```go
 func setNameFromKey(project *types.Project) {
