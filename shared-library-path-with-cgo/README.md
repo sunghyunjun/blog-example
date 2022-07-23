@@ -1,6 +1,4 @@
-<!-- {%comment%} -->
 # Shared Library Path 이해와 cgo 사용하기
-<!-- {%endcomment%} -->
 
 Shared Library를 cgo와 함께 사용하는데 있어 도움이 되는 정보를 기록합니다.
 

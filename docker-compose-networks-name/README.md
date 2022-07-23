@@ -1,6 +1,4 @@
-<!-- {%comment%} -->
 # Docker Compose Networks 이름 설정하기
-<!-- {%endcomment%} -->
 
 Docker Compose networks 설정을 했을 때, `docker network ls`를 하여 network name을 확인해보면 특정 형태의 접두사가 포함되곤 합니다.
 
